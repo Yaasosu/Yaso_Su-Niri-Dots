@@ -1,0 +1,98 @@
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "spacing": 4,
+    "modules-left": [
+        "custom/arch",
+        "niri/workspaces"
+    ],
+    "modules-center": [
+        "niri/window"
+    ],
+    "modules-right": [
+        "tray",
+        "pulseaudio",
+        "niri/language",
+        "memory",
+        "network",
+        "custom/notification",
+        "custom/clipboard", 
+        "clock",
+        "custom/power"
+    ],
+    "custom/arch": {
+        "format": "󰣇 ",
+        "tooltip": false,
+        "on-click": "sh -c 'pidof fuzzel && killall fuzzel || fuzzel'"
+    },
+    "niri/workspaces": {
+        "format": "{index}",
+        "on-click": "activate"
+    },
+    "niri/window": {
+        "format": "{}",
+        "max-length": 50,
+        "rewrite": {
+            "(.) — Mozilla Firefox": "🌎 $1",
+            "(.) - Discord": "💬 $1"
+        }
+    },
+    "tray": {
+        "icon-size": 21,
+        "spacing": 10,
+        "show-passive-items": true,
+        "reverse-direction": false
+    },
+    "pulseaudio": {
+        "format": "{icon} {volume}%",
+        "format-muted": "🔇 Muted",
+        "format-icons": {
+            "default": [
+                "🔈",
+                "🔉",
+                "🔊"
+            ]
+        },
+        "scroll-step": 5,
+        "on-click": "pavucontrol",
+        "tooltip": false
+    },
+    "niri/language": {
+        "format": "{}",
+        "tooltip": false
+    },
+    "memory": {
+        "interval": 4,
+        "format": "⚡ {}%",
+        "tooltip-format": "RAM: {used:0.1f}GB / {total:0.1f}GB"
+    },
+    "network": {
+        "format-wifi": "🌐 {essid}",
+        "format-ethernet": "🌐 Connected",
+        "format-disconnected": "🌐 Disconnected",
+        "tooltip-format": "{ifname}: {ipaddr}",
+        "on-click": "nm-connection-editor"
+    },
+    "custom/notification": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "swaync-client -t -sw"
+    },
+    "custom/clipboard": {
+        "format": "📋",
+        "tooltip": false,
+        "on-click": "cliphist list | fuzzel -d | cliphist decode | wl-copy"
+    },
+    "clock": {
+        "interval": 1,
+        "format": "{:%H:%M:%S}",
+        "format-alt": "{:%d.%m.%Y %H:%M}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "custom/power": {
+        "format": "",
+        "tooltip": false,
+        "on-click": "wlogout"
+    }
+}

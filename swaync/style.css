@@ -1,0 +1,217 @@
+/* ========================================= */
+/* ГЛОБАЛЬНЫЕ НАСТРОЙКИ                      */
+/* ========================================= */
+* {
+  font-family: "JetBrainsMono Nerd Font", monospace;
+  font-size: 13px;
+}
+
+/* ========================================= */
+/* АНИМАЦИЯ (ВЫЕЗД СПРАВА)                   */
+/* ========================================= */
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    margin-right: -400px;
+  }
+  100% {
+    opacity: 1;
+    margin-right: 0;
+  }
+}
+
+/* ========================================= */
+/* ШТОРКА (MAIN WINDOW)                      */
+/* ========================================= */
+.control-center {
+  background: rgba(30, 30, 46, 0.95); /* Base */
+  border: 2px solid #89b4fa;          /* Blue */
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  
+  min-height: 450px;
+  max-height: 450px;
+  
+  animation: slide-in 0.4s ease-out;
+  padding: 4px;
+}
+
+/* ========================================= */
+/* УВЕДОМЛЕНИЯ (POPUPS)                      */
+/* ========================================= */
+.notification {
+  box-shadow: none;
+  animation: slide-in 0.4s ease-out;
+  margin-top: 5px;
+}
+
+.notification-content {
+  background: transparent;
+  border: none;
+  border-radius: 5px;
+  margin: 6px;
+  padding: 10px;
+}
+
+/* Кнопки внутри уведомлений (Reply, Open...) */
+.notification-default-action,
+.notification-action {
+  color: #cdd6f4;
+  background: rgba(49, 50, 68, 0.5); /* Surface0 чуть прозрачный */
+  border: none;
+  box-shadow: none;
+  border-radius: 8px;
+  padding: 4px 8px;
+  margin-top: 5px;
+}
+
+.notification-default-action:hover,
+.notification-action:hover {
+  background: #45475a;
+}
+
+/* Текст уведомлений */
+.summary {
+  color: #cdd6f4;
+  font-weight: bold;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.body {
+  color: #bac2de;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+}
+
+.time {
+  color: #a6adc8;
+  font-size: 11px;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.8);
+  margin-right: 10px;
+}
+
+/* Кнопка закрытия уведомления */
+.notification-close-button {
+  background: transparent;
+  color: #f38ba8;
+  border: none;
+  box-shadow: none;
+}
+
+.notification-close-button:hover {
+  background: #f38ba8;
+  color: #1e1e2e;
+}
+
+/* ========================================= */
+/* ВИДЖЕТЫ                                   */
+/* ========================================= */
+
+/* Заголовки виджетов */
+.widget-title {
+  color: #89b4fa;
+  background: rgba(49, 50, 68, 0.5);
+  padding: 8px;
+  margin: 10px;
+  border-radius: 8px;
+}
+
+/* Кнопки в заголовках виджетов */
+.widget-title > button {
+  background: #313244;
+  color: #cdd6f4;
+  border: none;
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+.widget-title > button:hover {
+  background: #f38ba8;
+  color: #1e1e2e;
+}
+
+/* DND (Do Not Disturb) */
+.widget-dnd {
+  margin: 10px;
+  background: rgba(49, 50, 68, 0.5);
+  border-radius: 8px;
+  padding: 5px;
+}
+
+.widget-dnd > switch {
+  background: #313244;
+  border-radius: 8px;
+  border: none;
+  box-shadow: none;
+}
+
+.widget-dnd > switch:checked {
+  background: #89b4fa;
+}
+
+.widget-dnd > switch slider {
+  background: #cdd6f4;
+  border-radius: 8px;
+}
+
+/* MPRIS (Плеер) */
+.widget-mpris {
+  background: rgba(49, 50, 68, 0.5);
+  margin: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  color: #cdd6f4;
+}
+
+.widget-mpris button {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  color: #cdd6f4;
+  border-radius: 6px;
+}
+
+.widget-mpris button:hover {
+  background: #313244;
+}
+
+trough {
+  background: #313244;
+  border-radius: 8px;
+  min-height: 6px;
+}
+
+highlight {
+  background: #89b4fa;
+  border-radius: 8px;
+}
+
+/* ========================================= */
+/* !!! ФИКС ДЛЯ "MARK AS READ" !!!           */
+/* ========================================= */
+
+/* Убираем белый фон у кнопок действий в заголовках */
+.widget-buttons-grid {
+  background: transparent;
+  border-radius: 8px;
+  padding: 0;
+  margin: 0;
+}
+
+/* Прицельно красим белую кнопку в темный цвет */
+.widget-buttons-grid > flowbox > flowboxchild > button,
+.widget-buttons-grid > button {
+  background: #313244;  /* Surface0 (Темный) */
+  color: #cdd6f4;       /* Text */
+  border: none;
+  border-radius: 8px;
+  padding: 6px 12px;
+  margin: 0px 4px;
+  box-shadow: none;
+}
+
+/* Ховер эффект как у остальных (розовый) */
+.widget-buttons-grid > flowbox > flowboxchild > button:hover,
+.widget-buttons-grid > button:hover {
+  background: #f38ba8;
+  color: #1e1e2e;
+}

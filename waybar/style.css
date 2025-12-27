@@ -1,0 +1,133 @@
+* {
+    border: none;
+    border-radius: 0;
+    font-family: "JetBrainsMono Nerd Font", monospace;
+    font-size: 13px;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(30, 30, 46, 0.95);
+    color: #cdd6f4;
+}
+
+/* --- Левая часть --- */
+#custom-arch {
+    color: #89b4fa;
+    font-size: 18px;
+    padding: 0 15px;
+    margin-left: 5px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+#workspaces {
+    margin-left: 10px;
+    margin-top: 2px;
+    margin-bottom: 2px;
+}
+
+#workspaces button {
+    padding: 0 10px;
+    color: #6c7086;
+    background: transparent;
+}
+
+#workspaces button.active {
+    color: #89b4fa;
+    background: rgba(137, 180, 250, 0.2);
+    border-radius: 5px;
+}
+
+#workspaces button:hover {
+    background: rgba(137, 180, 250, 0.1);
+    border-radius: 5px;
+}
+
+/* --- Центр --- */
+#window {
+    color: #cdd6f4;
+    font-weight: bold;
+}
+
+/* --- Правая часть --- */
+/* Добавил #custom-power сюда для общего фона */
+#tray,
+#pulseaudio,
+#language,
+#memory,
+#network,
+#custom-notification,
+#custom-clipboard,
+#clock,
+#custom-power {
+    padding: 4px 10px;
+    margin: 2px 2px;
+    background: rgba(49, 50, 68, 0.8);
+    border-radius: 5px;
+    min-height: 20px;
+}
+
+#tray {
+    margin-right: 5px;
+}
+
+/* Стили модулей */
+#pulseaudio {
+    color: #fab387;
+}
+
+#pulseaudio.muted {
+    color: #a6adc8;
+    background: rgba(49, 50, 68, 0.5);
+}
+
+#language {
+    color: #f9e2af;
+}
+
+#memory {
+    color: #f38ba8;
+}
+
+#network {
+    color: #a6e3a1;
+}
+
+#network.disconnected {
+    color: #f38ba8;
+}
+
+/* --- Исправленный стиль уведомлений --- */
+#custom-notification {
+    color: #cba6f7;
+    min-width: 20px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+#custom-clipboard {
+    color: #94e2d5;
+}
+
+#clock {
+    color: #89b4fa;
+    /* Убрал margin-right отсюда, так как clock теперь не последний */
+}
+
+/* Новый стиль для кнопки выключения */
+#custom-power {
+    color: #f38ba8; /* Красный (Catppuccin Red) */
+    margin-right: 5px; /* Отступ справа теперь здесь */
+}
+
+/* Tooltip */
+tooltip {
+    background: rgba(30, 30, 46, 0.95);
+    border: 1px solid #89b4fa;
+    border-radius: 5px;
+}
+
+tooltip label {
+    color: #cdd6f4;
+}
