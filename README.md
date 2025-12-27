@@ -1,7 +1,33 @@
-<img width="1280" height="716" alt="image" src="https://github.com/user-attachments/assets/79d4635e-1fcf-42b3-8deb-4b1e932245d0" />
+<img width="1910" height="1073" alt="image" src="https://github.com/user-attachments/assets/8056015d-abae-4515-b4bb-941b80156762" />
 
-<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/047ff769-9af4-4a8f-ad58-5c77395f7595" />
+<img width="1280" height="720" alt="image" src="https://github.com/user-attachments/assets/66863d65-d759-4846-862c-34ac0187dee9" />
 
-<img width="522" height="440" alt="image" src="https://github.com/user-attachments/assets/33c0035a-17db-49ba-87f5-35808df42d1f" />
+All what do you need:
 
+sudo pacman -S niri waybar fuzzel kitty swaync fastfetch nwg-look qt6ct sddm swaybg ttf-jetbrains-mono-nerd wl-clipboard grim slurp polkit-gnome cliphist pavucontrol wlogout
+(or install via aur)
 
+export QT_QPA_PLATFORMTHEME=qt5ct to file ~/.profile
+
+sudo nano /etc/environment -> QT_QPA_PLATFORMTHEME=qt5ct
+
+Kitty theme - Vaughn
+
+gtk-theme:
+[breeze-dark](https://www.gnome-look.org/p/1301661/)
+[layan-theme](https://www.gnome-look.org/p/1309214)
+
+cursors:
+[Moga-Candy](https://www.gnome-look.org/p/2299255)
+[Qogir-cursors](https://www.gnome-look.org/p/1366182)
+(or install via aur)
+
+Key-bind:
+alt + z = terminal
+win + s = floating mode
+win + v = cliphistory
+win + d = fuzzel 
+
+e.t.c look in Niri config
+
+(You will need to configure the monitor yourself, as I have a slightly unusual configuration. )
