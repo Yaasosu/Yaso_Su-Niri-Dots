@@ -2,8 +2,7 @@
 
 set -e
 
-echo "==> [1/4] Installing DankLinux..."
-curl -fsSL https://install.danklinux.com | sh
+echo "==> [1/4] Starting installation..."
 
 echo ""
 echo "==> [2/4] Removing alacritty and waybar..."
@@ -12,7 +11,7 @@ sudo pacman -Rns --noconfirm alacritty waybar 2>/dev/null || echo "Packages not 
 echo ""
 echo "==> [3/4] Installing software and configuring fish..."
 
-sudo pacman -S --needed --noconfirm kitty fish util-linux
+sudo pacman -S --needed --noconfirm kitty fish starship util-linux
 
 FISH_PATH="/usr/bin/fish"
 
@@ -22,9 +21,14 @@ fi
 
 sudo chsh -s "$FISH_PATH" "$USER"
 
+mkdir -p "$HOME/.config/fish"
+if ! grep -q "starship init fish" "$HOME/.config/fish/config.fish" 2>/dev/null; then
+    echo 'starship init fish | source' >> "$HOME/.config/fish/config.fish"
+fi
+
 sudo ln -sf "$(command -v kitty)" /usr/local/bin/xterm 2>/dev/null || true
 
-echo "✓ Software installed, fish set as shell for $USER"
+echo "✓ Software installed, fish set as shell for $USER, starship configured"
 
 echo ""
 echo "==> [4/4] Cloning dotfiles..."
@@ -43,4 +47,4 @@ rm -rf "$TMP_DIR"
 
 echo ""
 echo "---"
-echo "✓ Done! Log out and back in to activate fish."
+echo "✓ Done! Log out and back in to activate fish and starship."
