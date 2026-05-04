@@ -24,7 +24,7 @@ sudo pacman -S nemo firefox
 git clone https://github.com/Yaasosu/Yaso_Su-Niri-Dots.git
 cd Yaso_Su-Niri-Dots
 chmod +X Dots-installer.sh
-./Dots-installer.sh]
+./Dots-installer.sh
 restart
 ```
 or
