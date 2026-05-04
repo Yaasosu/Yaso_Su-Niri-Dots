@@ -15,14 +15,22 @@
   </table>
 </div>
 
-as base → [DankMaterialShell](https://github.com/AvengeMedia/DankMaterialShell)
-
 ```bash
-
 sudo pacman -S nemo firefox
 ```
 > [!IMPORTANT]
-> Change monitor position in `config.kdl` to match your setup!
+> Change monitor position in `config.kdl` to match your setup! | can be problem with installer
+```bash
+git clone https://github.com/Yaasosu/Yaso_Su-Niri-Dots.git
+cd Yaso_Su-Niri-Dots
+chmod +X Dots-installer.sh
+./Dots-installer.sh]
+restart
+```
+or
+```bash
+git clone https://github.com/Yaasosu/Yaso_Su-Niri-Dots.git && cd Yaso_Su-Niri-Dots && chmod +x Dots-installer.sh && ./Dots-installer.sh && sudo reboot
+```
 
 ## ⌨️ Keybinds
 | Keys | Action |
